@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-console": [1, "off"],
+        "comma-dangle": [1, "never"],
+        // Styling
+        "semi": [1, "always"],
+        "quotes": [1, "double"],
+        "space-before-blocks": [1, { "functions": "always", "keywords": "always", "classes": "always" } ],
+        "indent": [1, 2],
+        // ES6
+        "no-useless-constructor": [1]
+    }
+}
