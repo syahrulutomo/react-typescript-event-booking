@@ -10,7 +10,7 @@ const Input = styled.input<InputProps>`
   font-size: 16px;
   line-height: 14px;
   padding: 12px 32px 12px 8px;
-  color: ${ props => props.color ? props.color : 'red' };
+  color: ${ props => props.color ? props.color : '#444' };
   font-style: ${ props => props.fontStyle? props.fontStyle : 'normal' };
   letter-spacing: .5px;
   border: none;
