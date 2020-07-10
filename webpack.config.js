@@ -1,12 +1,17 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
   entry: "./src/index.tsx",
   target: "web",
   resolve: {
-    extensions: [ ".tsx", ".ts", ".js" ],
+    extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
+    alias: {
+      components: path.resolve(__dirname, "src/components"),
+      root: path.resolve(__dirname, "src/")
+    },
   },
   module: {
     rules: [
@@ -18,8 +23,30 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
+          "file-loader",
           {
-            loader: "file-loader",
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75
+              }
+            }
           },
         ],
       },
@@ -50,5 +77,15 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
     },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.(js(\?.*)?|.tsx?)$/i,
+      })],
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    port: 3000
   }
 };

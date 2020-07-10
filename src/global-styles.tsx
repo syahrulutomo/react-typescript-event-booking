@@ -8,11 +8,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     margin: 0;
   }
-
-  #app {
-    min-height: 100%;
-    min-width: 100%;
-  }
 `;
 
 export default GlobalStyle;

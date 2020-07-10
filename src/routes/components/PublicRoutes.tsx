@@ -3,7 +3,6 @@ import { Route, RouteComponentProps, RouteProps, Redirect } from 'react-router-d
 
 const PublicRoute: React.SFC<RouteProps> =
   ({ component: Component, ...rest }) => {
-    const isLoggedIn = true;
 
     if (!Component) {
       return null;
@@ -12,7 +11,7 @@ const PublicRoute: React.SFC<RouteProps> =
       <Route
         {...rest}
         render={(props: RouteComponentProps<{}>) => {
-          return isLoggedIn ? <Component {...props} /> : <Redirect to="login" />
+          return <Component {...props} />
         }}
       />
     );

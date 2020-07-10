@@ -37,3 +37,25 @@ export const NavListTitle = styled.p`
   margin-bottom: 0;
   margin-top: 0;
 `
+
+export const NavPublicContainer = styled.nav`
+  background-color: #FFF;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const NavPublicMenu = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  padding: 8px;
+`
+
+export const NavPublicMenuItem = styled.div`
+  color: #212121;
+  padding: 8px 12px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+`

@@ -9,7 +9,7 @@ const Nav = (): JSX.Element => {
   const [navItems, setNavItems] = useState([
     { name: "Explore", icon: searchIcon },
     { name: "Groups", icon: groupsIcon },
-    { name: "Notification", icon: notificationsIcon },
+    { name: "Notifications", icon: notificationsIcon },
     { name: "Profile", icon: '' }, 
   ])
 

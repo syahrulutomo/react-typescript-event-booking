@@ -3,7 +3,7 @@ import { Route, RouteComponentProps, RouteProps, Redirect } from 'react-router-d
 
 const PrivateRoute: React.SFC<RouteProps> =
   ({ component: Component, ...rest }) => {
-    const isLoggedIn = false;
+    const isLoggedIn = true;
 
     if (!Component) {
       return null;

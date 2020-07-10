@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledLogo from './Logo';
+import {TextLogo} from './Logo';
 import Wrapper from './Wrapper';
 
 interface Logo {
@@ -11,7 +11,7 @@ const Logo = (props: Logo): JSX.Element => {
   
   return (
     <Wrapper>
-      <StyledLogo>{title}</StyledLogo>
+      <TextLogo>{title}</TextLogo>
     </Wrapper>
   );
 };

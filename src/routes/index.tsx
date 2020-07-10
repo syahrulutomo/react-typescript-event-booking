@@ -1,13 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Switch } from "react-router-dom";
 import PublicRoutes from "./components/PublicRoutes";
-import HomeView from './../view/public/Home/index';
+import PrivateRoutes from "./components/PrivateRoutes";
+import HomeView from '../view/private/Home/index';
+import HomePublicView from '../view/public/Home/index';
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <PublicRoutes component={HomeView} exact path="/" />
+        <PrivateRoutes component={HomeView} exact path="/home" />
+        <PublicRoutes component={HomePublicView} exact path="/" />
       </Switch>
     </BrowserRouter>
   );
