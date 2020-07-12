@@ -23,26 +23,26 @@ export const PublicBannerWrapper = styled.div`
   &:before {
     content: "";
     position: fixed;
-    top: 170px;
+    top: 240px;
     left: -100px;
     width: 200px;
     height: 210px;
     border-radius: 50% 70% 50% 40%;
-    background-color: #F65858;
-    opacity: .2;
+    background-color: #97CAD1;
+    opacity: .4;
     z-index: -5;
   }
 
   &:after {
     content: "";
     position: fixed;
-    top: 50px;
-    right: -300px;
+    top: 170px;
+    right: -200px;
     width: 500px;
-    height: 500px;
+    height: 520px;
     border-radius: 50%;
-    background-color: #97CAD1;
-    opacity: .2;
+    background-color: #F65858;
+    opacity: .05;
     z-index: -5;
   }
 `

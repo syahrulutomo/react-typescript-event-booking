@@ -16,9 +16,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
+        test: /\.(js|jsx|ts|tsx)$/,
+        include: [path.resolve(__dirname, "src")],
+        exclude: [path.resolve(__dirname, "node_modules")],
+        use: "babel-loader"
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
