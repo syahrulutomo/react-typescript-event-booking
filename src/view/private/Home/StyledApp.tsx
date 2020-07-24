@@ -5,6 +5,7 @@ export const AppContainer = styled.div`
   padding: 0;
   margin: 0;
   width: 100%;
+  padding: 0 20px;
 `
 
 export const AppContent = styled.div`

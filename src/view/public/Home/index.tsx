@@ -1,7 +1,7 @@
 import React from "react";
 import { LogoPrimary, LogoWrapper } from "components/base/Logo/Logo";
 import { NavPublicContainer, NavPublicMenuItem, NavPublicMenu } from "components/partials/Nav/Nav";
-import { PublicBanner, PublicBannerWrapper, PublicBannerTitle, PublicBannerJoinButton, PublicBannerImageWrapper } from "components/features/Banner/StyledBanner";
+import { PublicBanner, PublicBannerWrapper, PublicBannerTitle, PublicBannerJoinButton, PublicBannerImageWrapper, PublicBannerImage } from "components/features/Banner/StyledBanner";
 import { PublicSearchBarContainer, PublicSearchBarInputWrapper, PublicSearchBarEvent, PublicSearchBarLocation, InputIcon, PublicSearchButton } from "components/features/SearchBar/PublicSearchBar"; 
 import { AppContainer } from "../../private/Home/StyledApp";
 import GlobalStyles from "../../../global-styles";
@@ -24,26 +24,28 @@ const HomePublic = (): JSX.Element => {
       </NavPublicContainer>
       <PublicBanner>
         <PublicBannerWrapper>
-          <PublicBannerTitle>Discover events for all the things you love</PublicBannerTitle>
-          <PublicBannerJoinButton role="navigation" href="#" ariaLabel="Join Meetup">Join Meetup</PublicBannerJoinButton>
+          <div>
+            <PublicBannerTitle>Discover events for all the things you love</PublicBannerTitle>
+            <PublicBannerJoinButton role="navigation" href="#" ariaLabel="Join Meetup">Join Meetup</PublicBannerJoinButton>
+          </div>
+          <PublicBannerImageWrapper>
+            <PublicBannerImage src={Hero} alt="Hero"/>
+          </PublicBannerImageWrapper>
         </PublicBannerWrapper>
-        <PublicBannerImageWrapper>
-          <img src={Hero} alt="Hero" style={{ width: "100%" }}/>
-        </PublicBannerImageWrapper>
-        <PublicSearchBarContainer>
-          <PublicSearchBarInputWrapper>
-            <PublicSearchBarEvent placeholder="Find your next event" />
-            <InputIcon src={SearchIcon}/>
-          </PublicSearchBarInputWrapper>
-          <PublicSearchBarInputWrapper>
-            <PublicSearchBarLocation placeholder="Kudus, ID" />
-            <InputIcon src={LocationIcon}/>
-          </PublicSearchBarInputWrapper>
-          <PublicSearchButton>
-            Search
-          </PublicSearchButton>
-        </PublicSearchBarContainer>
       </PublicBanner>
+      <PublicSearchBarContainer>
+        <PublicSearchBarInputWrapper>
+          <PublicSearchBarEvent placeholder="Find your next event" />
+          <InputIcon src={SearchIcon}/>
+        </PublicSearchBarInputWrapper>
+        <PublicSearchBarInputWrapper>
+          <PublicSearchBarLocation placeholder="Kudus, ID" />
+          <InputIcon src={LocationIcon}/>
+        </PublicSearchBarInputWrapper>
+        <PublicSearchButton>
+          Search
+        </PublicSearchButton>
+      </PublicSearchBarContainer>
       <GlobalStyles/>
     </AppContainer>
   );
